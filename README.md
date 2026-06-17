@@ -1,11 +1,8 @@
 ## ** Author's Note **
-##----------------------------------------------------------------------------------------------------------------------------------------##
-I come from a background in physics and mathematics. The focus of this project is on the accuracy of the physics and the clarity of the numerical methods rather than on writing highly optimized or production‑grade code.
-Because of that, parts of the code may be: more verbose than necessary, not fully optimized, written with clarity in mind rather than efficiency.
-This project represents my learning process as I explore numerical simulation and Python programming. I'm actively improving my software engineering/programming skills. 
-Suggestions for improvement are always welcome. Thank you.
-##----------------------------------------------------------------------------------------------------------------------------------------##
+My background is in physics and mathematics, and the focus of this project is on accurate modeling, numerical reasoning, and clear visualization of physical systems. I am actively expanding my software engineering skills, so the code in this repository prioritizes clarity, correctness, and transparency of the physics over optimization or advanced programming patterns.
 
+This project reflects both my technical foundation and my ongoing growth as I build more experience with Python, numerical methods, and scientific computing.
+##
 Projectile Motion with Quadratic Drag Simulation
 
 This project simulates projectile motion with and without quadratic air resistance using Python and Jupyter Notebook.
