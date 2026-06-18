@@ -3,43 +3,33 @@ My background is in physics and mathematics, and the focus of this project is on
 
 This project reflects both my technical foundation and my ongoing growth as I build more experience with Python, numerical methods, and scientific computing.
 
-## Projectile Motion with Quadratic Drag.
-A numerical simulation and visualization project using Python. This project models projectile motion under two conditions:
-- With quadratic air resistance (realistic physics)
-- Without air resistance (idealized parabola)
+## Damped Harmonic Oscillator Simulation
+A Python simulation and visualization of underdamped, overdamped, and critically damped harmonic oscillators using Euler's method.
 
-The simulation uses numerical integration to compute the trajectory and plots both paths on the same graph for direct comparison. Adjustable parameters allow exploration of how launch conditions and drag strength affect the motion.
+This project numerically solves the second-order differntial equation,
+
+- x'' + 2*y*x' + w^2x = 0
+
+by converting it into a system of first-order ODEs and integrating forward in time. The simulation also detects when each oscillator reaches equilibrium and compared how long each damping type takes to reach equilibrium.
 
 ## Features
-- Realistic quadratic drag model.
-- Side‑by‑side comparison of drag vs. no‑drag trajectories.
-- Adjustable parameters:
-    - Initial velocity.
-    - Launch angle.
-    - Mass.
-    - Drag constant.
-    - Initial height.
-- Clean matplotlib visualizations.
-- Optional interactive sliders using ipywidgets.
-- Clear, readable physics‑focused code.
+- Simulates three damping types:
+    - underdamped.
+    - overdamped.
+    - critically damped.
+- Numerical integration using Euler's Method.
+- Automatic equilibrium detection.
+- Configurable physical parameters.
+	- Mass (m).
+	- Spring Constant (k).
+	- Damping Coefficient (b).
 
 ## Files
-- `ProjectileMotion.ipynb` — main notebook with simulation and plots.
+- `HarmonicOscillator.ipynb` — main notebook with simulation and plots.
 
 ## Physics Model
-
-I derived the equations for projectile motion (kinematics) and other useful formulas to aid in this project.
-Such examples used are:
-
-The drag force is modeled as:
-
-F_drag = -c * v^2 * v_hat
-
-where  
-- c = ½ ρ C_d A  
-- v is speed  
-- v_hat is the unit velocity vector
-
+In the notebook, I derive everything we need starting with Newton's Second Law and Hooke's Law. I delve more deeply in derivations explain each step I took. Having knowledge of Calculus and Ordinary Differential Equations isn't necessary, but it helpful in understanding each step.
+ 
 ## Requirements
 - Python 3
 - NumPy
