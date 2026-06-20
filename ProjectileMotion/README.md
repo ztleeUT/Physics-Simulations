@@ -25,7 +25,7 @@ You can also select from several real‑world presets (baseball, soccer ball, sh
 
 ---
 
-## 🚀 Try It Online
+## Try It Online
 
 Launch the fully interactive version in your browser:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ArchonL33/Physics-Simulations/HEAD?labpath=ProjectileMotion%2Fprojectile_sim.ipynb) 
@@ -33,7 +33,7 @@ No installation required.
 
 ---
 
-## 🖼️ Preview
+## Preview
 
 ### User Interface
 ![UI](images/ui.png)
@@ -62,12 +62,12 @@ The simulation solves a system of four coupled ODEs representing:
 ### **No‑Drag Model**
 
 
-\[
+
 \dot{x} = v_x,\quad 
 \dot{y} = v_y,\quad 
 \dot{v_x} = 0,\quad 
 \dot{v_y} = -g
-\]
+
 
 
 
@@ -75,19 +75,17 @@ The simulation solves a system of four coupled ODEs representing:
 Drag force:
 
 
-\[
 F_d = -c v^2
-\]
 
 
 
 Resulting accelerations:
 
 
-\[
+
 \dot{v_x} = -\frac{c}{m} v v_x,\quad 
 \dot{v_y} = -g - \frac{c}{m} v v_y
-\]
+
 
 
 
@@ -95,9 +93,9 @@ Resulting accelerations:
 An event function stops integration when:
 
 
-\[
+
 y(t) = 0
-\]
+
 
 
 
