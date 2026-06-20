@@ -63,10 +63,10 @@ The simulation solves a system of four coupled ODEs representing:
 
 
 
-\dot{x} = v_x,\quad 
-\dot{y} = v_y,\quad 
-\dot{v_x} = 0,\quad 
-\dot{v_y} = -g
+$\dot{x} = v_x,\quad$ 
+$\dot{y} = v_y,\quad$ 
+$\dot{v_x} = 0,\quad$ 
+$\dot{v_y} = -g$
 
 
 
