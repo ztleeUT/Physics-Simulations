@@ -1,6 +1,5 @@
 # Projectile Motion Simulator
 
-
 An interactive physics simulation that models projectile motion **with and without aerodynamic drag**.  
 This tool visualizes trajectories, speed, and energy in real time using adjustable parameters and presets for common objects.
 
