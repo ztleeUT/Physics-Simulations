@@ -18,7 +18,7 @@ As I continue developing my software engineering skills, I prioritize **clarity,
 
 ## **Overview**
 
-Each project is organized into its own subfolder with a dedicated README, source code, and supporting materials.
+Each project is organized into its own subfolder with a dedicated README, source code, and supporting materials. When clicking the mybinder link and the plots do not load, try running all cells.
 
 - **Projectile Motion with Quadratic Drag** *(completed)*  
   Numerical integration of 2D projectile motion with and without air resistance, including visualization and parameter exploration.  
