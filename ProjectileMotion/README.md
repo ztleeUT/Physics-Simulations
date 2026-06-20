@@ -63,12 +63,13 @@ The simulation solves a system of four coupled ODEs representing:
 
 
 $$
-\begin{array}{l}
-\frac{dx}{dt} = v_x \\
-\frac{dy}{dt} = v_y \\
-\frac{dv_x}{dt} = 0 \\
-\frac{dv_y}{dt} = -g
-\end{array}
+\begin{aligned}
+\frac{dx}{dt} &= v_x \\
+\frac{dy}{dt} &= v_y \\
+\frac{dv_x}{dt} &= 0 \\
+\frac{dv_y}{dt} &= -g
+\end{aligned}
+\qquad\qquad\qquad
 $$
 
 
