@@ -23,7 +23,7 @@ Each project is organized into its own subfolder with a dedicated README, source
 - **Projectile Motion with Quadratic Drag** *(completed)*  
   Numerical integration of 2D projectile motion with and without air resistance, including visualization and parameter exploration.
 
-- **Harmonic Oscillators**  
+- **Harmonic Oscillators** *(completed)*  
   Simple, damped, and driven oscillators; phase‑space analysis; resonance behavior.
 
 - **Lorenz System**  
