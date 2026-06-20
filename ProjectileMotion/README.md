@@ -63,10 +63,12 @@ The simulation solves a system of four coupled ODEs representing:
 
 
 $$
-\dot{x} = v_x,\\ 
-$\dot{y} = v_y,\\ 
-$\dot{v_x} = 0,\\ 
+\begin{aligned}
+\dot{x} = v_x \\ 
+$\dot{y} = v_y \\ 
+$\dot{v_x} = 0 \\ 
 $\dot{v_y} = -g$
+\end{aligned}
 $$
 
 
@@ -75,7 +77,9 @@ $$
 Drag force:
 
 $$
+\being{aligned}
 F_d = -c v^2
+\end{aligned}
 $$
 
 
@@ -83,8 +87,10 @@ Resulting accelerations:
 
 
 $$
+\begin{aligned}
 \dot{v_x} = -\frac{c}{m} v v_x,\\
 \dot{v_y} = -g - \frac{c}{m} v v_y \\
+\end{aligned}
 $$
 
 
@@ -94,7 +100,7 @@ An event function stops integration when:
 
 
 
-y(t) = 0
+$y(t) = 0$
 
 
 
