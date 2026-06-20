@@ -62,14 +62,14 @@ The simulation solves a system of four coupled ODEs representing:
 ### **No‑Drag Model**
 
 
-$$
+$
 \begin{aligned}
 \dot{x} = v_x \\ 
-$\dot{y} = v_y \\ 
-$\dot{v_x} = 0 \\ 
-$\dot{v_y} = -g$
+\dot{y} = v_y \\ 
+\dot{v_x} = 0 \\ 
+\dot{v_y} = -g
 \end{aligned}
-$$
+$
 
 
 
