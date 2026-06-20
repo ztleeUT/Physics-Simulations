@@ -62,11 +62,14 @@ The simulation solves a system of four coupled ODEs representing:
 ### **No‑Drag Model**
 
 
-dx/dt = vx
-dy/dt = vy
-dvx/dt = 0
-dvy/dt = -g
-
+$$
+\begin{array}{l}
+\frac{dx}{dt} = v_x \\
+\frac{dy}{dt} = v_y \\
+\frac{dv_x}{dt} = 0 \\
+\frac{dv_y}{dt} = -g
+\end{array}
+$$
 
 
 ### **Quadratic Drag Model**
