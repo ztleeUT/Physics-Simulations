@@ -22,8 +22,8 @@ Each project is organized into its own subfolder with a dedicated README, source
 
 - **Projectile Motion with Quadratic Drag** *(completed)*  
   Numerical integration of 2D projectile motion with and without air resistance, including visualization and parameter exploration.
-  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ArchonL33/Physics-Simulations/ProjectileMotion/HEAD?urlpath=%2Fdoc%2Ftree%2FProjectileMotion.ipbyn)
-
+  https://mybinder.org/v2/gh/ArchonL33/Physics-Simulations/HEAD?urlpath=%2Fdoc%2Ftree%2FProjectileMotion%252FProjectileMotion.ipbyn
+  
 - **Harmonic Oscillators** *(completed)*  
   Simple, damped, and driven oscillators; phase‑space analysis; resonance behavior.
 
