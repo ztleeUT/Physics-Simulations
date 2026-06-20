@@ -1,52 +1,122 @@
-## ** Author's Note **
-My background is in physics and mathematics, and the focus of this project is on accurate modeling, numerical reasoning, and clear visualization of physical systems. I am actively expanding my software engineering skills, so the code in this repository prioritizes clarity, correctness, and transparency of the physics over optimization or advanced programming patterns.
+# Projectile Motion Simulator
 
-This project reflects both my technical foundation and my ongoing growth as I build more experience with Python, numerical methods, and scientific computing.
 
-## Projectile Motion with Quadratic Drag.
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ArchonL33/Physics-Simulations/blob/main/ProjectileMotion/HEAD?urlpath=%2Fdoc%2Ftree%2FProjectileMotion.ipynb)  
+An interactive physics simulation that models projectile motion **with and without aerodynamic drag**.  
+This tool visualizes trajectories, speed, and energy in real time using adjustable parameters and presets for common objects.
 
-A numerical simulation and visualization project using Python. This project models projectile motion under two conditions:
-- With quadratic air resistance (realistic physics)
-- Without air resistance (idealized parabola)
+---
 
-The simulation uses numerical integration to compute the trajectory and plots both paths on the same graph for direct comparison. Adjustable parameters allow exploration of how launch conditions and drag strength affect the motion.
+## Overview
 
-## Features
-- Realistic quadratic drag model.
-- Side‑by‑side comparison of drag vs. no‑drag trajectories.
-- Adjustable parameters:
-    - Initial velocity.
-    - Launch angle.
-    - Mass.
-    - Drag constant.
-    - Initial height.
-- Clean matplotlib visualizations.
-- Optional interactive sliders using ipywidgets.
-- Clear, readable physics‑focused code.
+This simulation numerically solves the equations of motion for a projectile launched at an angle, comparing:
 
-## Files
-- `ProjectileMotion.ipynb` — main notebook with simulation and plots.
+- **Ideal motion (no drag)**
+- **Realistic motion (quadratic drag)**
+
+The interface allows you to adjust:
+
+- Mass  
+- Drag coefficient  
+- Launch angle  
+- Initial height  
+- Initial velocity  
+
+You can also select from several real‑world presets (baseball, soccer ball, shotput, etc.).
+
+---
+
+## 🚀 Try It Online
+
+Launch the fully interactive version in your browser:
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ArchonL33/Physics-Simulations/HEAD?labpath=ProjectileMotion%2Fprojectile_sim.ipynb) 
+No installation required.
+
+---
+
+## 🖼️ Preview
+
+### User Interface
+![UI](images/ui.png)
+
+### Trajectory Comparison (Drag vs No Drag)
+![Trajectory](images/trajectory.png)
+
+### Speed vs Time
+![Speed](images/speed.png)
+
+### Energy vs Time
+![Energy](images/energy.png)
+
+
+---
 
 ## Physics Model
 
-I derived the equations for projectile motion (kinematics) and other useful formulas to aid in this project.
-Such examples used are:
+The simulation solves a system of four coupled ODEs representing:
 
-The drag force is modeled as:
+- Horizontal position \( x \)  
+- Vertical position \( y \)  
+- Horizontal velocity \( v_x \)  
+- Vertical velocity \( v_y \)
 
-F_drag = -c * v^2 * v_hat
+### **No‑Drag Model**
 
-where  
-- c = ½ ρ C_d A  
-- v is speed  
-- v_hat is the unit velocity vector
 
-## Requirements
-- Python 3
-- NumPy
-- Matplotlib
-- ipywidgets
+\[
+\dot{x} = v_x,\quad 
+\dot{y} = v_y,\quad 
+\dot{v_x} = 0,\quad 
+\dot{v_y} = -g
+\]
 
-## Author
-Zachary Lee
+
+
+### **Quadratic Drag Model**
+Drag force:
+
+
+\[
+F_d = -c v^2
+\]
+
+
+
+Resulting accelerations:
+
+
+\[
+\dot{v_x} = -\frac{c}{m} v v_x,\quad 
+\dot{v_y} = -g - \frac{c}{m} v v_y
+\]
+
+
+
+### **Ground Impact Detection**
+An event function stops integration when:
+
+
+\[
+y(t) = 0
+\]
+
+
+
+This allows accurate calculation of:
+
+- Impact distance  
+- Impact speed  
+- Impact kinetic energy  
+
+---
+
+## Features
+
+- Real‑time interactive plots  
+- Drag vs no‑drag comparison  
+- Speed and energy visualization  
+- Adjustable physical parameters  
+- Presets for real objects  
+- Clean UI with sliders and output panel  
+- Numerical integration using `scipy.integrate.solve_ivp`
+
+---
