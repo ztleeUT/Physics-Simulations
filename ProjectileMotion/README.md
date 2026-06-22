@@ -88,11 +88,11 @@ This provides:
 
 ## Example Outputs
 
-Trajectory Plot
+Trajectory Plot  
 ![Trajectory Plot](images/trajectory.png)
 
-Range vs. Launch Angle
-![Range vs Launch Angle](images/Range_vs_LauncAngle.png)
+Range vs. Launch Angle  
+![Range vs Launch Angle](images/Range_vs_LaunchAngle.png)
 
 ## Features
 - Accurate physics‑based projectile simulation
