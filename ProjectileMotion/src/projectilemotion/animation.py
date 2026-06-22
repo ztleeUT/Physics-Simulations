@@ -1,8 +1,8 @@
- # -----------------------------------------------------------------------------------------
- # Creates the animations to use on our trajectory plot.
- # Animation includes a moving "projectile" with a moving trail.
- # Contains controls to limit the frames of animation to improve generation time.
- # -----------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------
+# Creates the animations to use on our trajectory plot.
+# Animation includes a moving "projectile" with a moving trail.
+# Contains controls to limit the frames of animation to improve generation time.
+# -----------------------------------------------------------------------------------------
  
  from matplotlib.animation import FuncAnimation
  
@@ -51,8 +51,8 @@ def create_animation(fig, ax, results, trail_length = 25, interval = 45):
     frames = range(0, n_frames, step)
     
     anim = FuncAnimation(fig, lambda frame:
-        update_animation(frame, x, y, point_d, trail_length),
-        init_funct = lambda: init_animation(point_d, trail_d), 
+        update_animation(frame, x, y, point_d, trail_d, trail_length),
+        init_func = lambda: init_animation(point_d, trail_d), 
         frames = frames, interval = interval, repeat = True, blit = False)
         
     return anim

@@ -19,10 +19,6 @@ def plot_simulation(results, show_nodrag_path=True):
     # Single plot only
     fig, ax = plt.subplots(figsize=figsize, dpi=dpi)
     
-# -----------------------------------------------------------------------------------------
-# Static Trajectory
-# -----------------------------------------------------------------------------------------
-
     # Plots the static trajectories.
     ax.plot(x, y, label="With Drag", color="blue", linestyle="--")
 

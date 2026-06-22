@@ -11,7 +11,6 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import PillowWriter
 from IPython.display import HTML, display
 from projectilemotion.solvers import update_simulation
-from projectilemotion.plotting import plot_simulation
 from projectilemotion.plotting import plot_simulation, figsize, dpi
 from projectilemotion.physics import percent_difference
 
@@ -126,7 +125,7 @@ def file_save_notice(default_name, callback):
 def run_and_plot(b):
     error_output.clear_output()
     plot_output.clear_output()
-    impact_value.clear_output()
+    impact_values.clear_output()
 
     try:
         results = update_simulation(
@@ -141,8 +140,10 @@ def run_and_plot(b):
 
         with plot_output:
             display(progress)
-
-        fig, anim = plot_simulation(results, nodrag_path_toggle.value)
+            
+        
+        fig, ax = plot_simulation(results, nodrag_path_toggle.value)
+        anim = create_animation(fig, ax, results)
         html = anim.to_jshtml()
 
         plot_output.clear_output()
