@@ -24,13 +24,15 @@ You can also select from several real‑world presets (baseball, soccer ball, sh
 
 ---
 
-## How to Run
+## How to Use Program
 
-When the code loads, simply select a preset and press run. Doing so will generate the following plot.
+When the code loads, simply select a preset or adjust the sliders and press the "run" button. Doing so will generate the following plots:
 
-- Impact Distance, plot showing how far a projectile will travel before hitting the ground.
-- Impact Speed, plot showing how fast a projectile was moving when it impacted the ground.
-- Impact Energy, plot showing how much energy the projectile had when it struck the ground.
+- Impact Distance
+- Impact Speed
+- Impact Energy
+
+It will also generate the distance, speed, and energy values when the projectile impacts the ground.
 
 ---
 
