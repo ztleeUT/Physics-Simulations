@@ -6,6 +6,7 @@
 import numpy as np
 from scipy.integrate import solve_ivp
 from projectilemotion.physics import *
+from projectilemotion.validation import *
 
 max_time = 30
 time_step = 0.01
@@ -25,21 +26,15 @@ except NameError:
 # Returns both sets of values for use with the "Run" button.
 # -----------------------------------------------------------------------------------------
 
-def update_simulation(m=0.15, c=0.00086, y_0=0, angle=45, v_0=30, display_results=True):
+def update_simulation(m=0.15, c=0.00086, y_0=0, angle=45, v_0=30):
 
-    # Statements to handle possible errors from unrealistic values.
-    if m <= 0: raise ValueError("Mass must be positive.")
-    if c < 0: raise ValueError("Lumped Drag Coefficient must be positive.")
-    if v_0 < 0: raise ValueError("Speed cannot be negative.")
-    if not (0 <= angle <= 90): raise ValueError("Launch angle must be between 0 and 90.")
-    if y_0 < 0: raise ValueError("Initial Height cannot be negative.")
+    # Checks for input errors from validation.py
+    validate_inputs(m, c, y_0, angle, v_0)
 
     # Cache key
     key = (float(m), float(c), float(y_0), float(angle), float(v_0), float(SimConfig["time_step"]))
     if key in _sim_cache:
         return _sim_cache[key]
-
-    impact_values.clear_output()
 
     theta = np.radians(angle)
     v_x0 = v_0 * np.cos(theta)
@@ -92,32 +87,13 @@ def update_simulation(m=0.15, c=0.00086, y_0=0, angle=45, v_0=30, display_result
     x_nd_impact = x_nd[-1]
     v_nd_impact = v_nd[-1]
     E_nd_impact = E_t_nd[-1]
-
-    # Prints both sets of values of the projectiles.
-    if display_results:
-        with impact_values:
-            print(f"Impact distance (drag):      {x_impact:.2f} m")
-            print(f"Impact distance (no drag):   {x_nd_impact:.2f} m")
-            print(f"Distance Difference:         {abs(x_impact - x_nd_impact):.2f} m")
-            dbz_x = percent_difference(x_nd_impact, x_impact)
-            print(f"Percent Error (no drag):     {dbz_x:.2f} %")
-            print("---------------------------------------------------------------")
-            print(f"Impact Speed (drag):         {v_impact:.2f} m/s")
-            print(f"Impact Speed (no drag):      {v_nd_impact:.2f} m/s")
-            print(f"Speed Difference:            {abs(v_impact - v_nd_impact):.2f} m/s")
-            dbz_v = percent_difference(v_nd_impact, v_impact)
-            print(f"Percent Error (no drag):     {dbz_v:.2f} %")
-            print("---------------------------------------------------------------")
-            print(f"Impact Energy (drag):        {E_impact:.2f} joules")
-            print(f"Impact Energy (no drag):     {E_nd_impact:.2f} joules")
-            print(f"Energy Difference:           {abs(E_impact - E_nd_impact):.2f} joules")
-            dbz_E = percent_difference(E_nd_impact, E_impact)
-            print(f"Percent Error (no drag):     {dbz_E:.2f} %")
-
+ 
     results_simulation = {
-        "t": t, "x": x, "y": y, "v": v, "E_t": E_t,
-        "t_nd": t_nd, "x_nd": x_nd, "y_nd": y_nd, "v_nd": v_nd, "E_t_nd": E_t_nd
-    }
+    "t": t, "x": x, "y": y, "v": v, "E_t": E_t,
+    "t_nd": t_nd, "x_nd": x_nd, "y_nd": y_nd, "v_nd": v_nd, "E_t_nd": E_t_nd,
+    "x_impact": x_impact, "v_impact": v_impact, "E_impact": E_impact,
+    "x_nd_impact": x_nd_impact, "v_nd_impact": v_nd_impact, "E_nd_impact": E_nd_impact}
 
     _sim_cache[key] = results_simulation
+    
     return results_simulation
