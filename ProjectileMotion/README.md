@@ -1,6 +1,6 @@
 ## 2D Projectile Motion With Drag
 An Interactive Physics Simulation by Zachary Lee
-![Animated Trajectory](AnimatedTrajectory.gif)
+![Animated Trajectory](images/AnimatedTrajectory.gif)
 
 ## Overview
 This project is an interactive physics simulation that models 2D projectile motion both with and without quadratic drag, using numerical integration via SciPy’s solve_ivp.
@@ -69,7 +69,7 @@ This provides:
 
 ## Interactive UI
 
-![UI Screenshot](ui_v3.png)
+![UI Screenshot](images/ui_v3.png)
 
 - The notebook includes a full widget‑based UI:
 - Mass slider
@@ -89,10 +89,10 @@ This provides:
 ## Example Outputs
 
 Trajectory Plot
-![Trajectory Plot](trajectory.png)
+![Trajectory Plot](images/trajectory.png)
 
 Range vs. Launch Angle
-![Range vs Launch Angle](Range_vs_LauncAngle.png)
+![Range vs Launch Angle](images/Range_vs_LauncAngle.png)
 
 ## Features
 - Accurate physics‑based projectile simulation
