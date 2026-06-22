@@ -104,17 +104,6 @@ Range vs. Launch Angle
 - CSV export for trajectory data
 - Angle sweep tool to visualize optimal launch angles
 
-## File Structure
-Code
-ProjectileMotion/
-│
-├── ProjectileMotion.ipynb      # Main simulation notebook
-├── trajectory.png              # Static trajectory plot
-├── Range_vs_LauncAngle.png     # Angle sweep visualization
-├── ui_v3.png                   # UI screenshot
-├── AnimatedTrajectory.gif       # Animated projectile motion
-└── README.md                   # (This file)
-
 ## Installation
 Requirements
 - Python 3.8+
