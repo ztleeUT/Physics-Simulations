@@ -1,95 +1,152 @@
-# Projectile Motion Simulator
-
-An interactive physics simulation that models the 2D motion of a projectile when quadratic drag is present and not present.
-This tool visualizes trajectories, speed, and energy in real time using adjustable parameters and presets for common objects.
-It compares both values by outputting them through text and outputting them on the same plots.
-
----
+## 2D Projectile Motion With Drag
+An Interactive Physics Simulation by Zachary Lee
+![Animated Trajectory](AnimatedTrajectory.gif)
 
 ## Overview
+This project is an interactive physics simulation that models 2D projectile motion both with and without quadratic drag, using numerical integration via SciPy’s solve_ivp.
+It combines:
 
-This simulation numerically solves the equations of motion for a projectile launched at an angle, comparing:
+- Classical kinematics
+- Fluid dynamics (drag force modeling)
+- Numerical ODE solving
+- Interactive widgets
+- Animated trajectory visualization
 
-- **Ideal motion (no drag)**
-- **Realistic motion (quadratic drag)**
+My goal with this project is twofold:
 
-The interface allows you to adjust:
+- Derive and explain the physics behind projectile motion, including drag.
+- Use the derived equations to accurately simulate real‑world projectile trajectories.
 
-- Mass  
-- Drag coefficient  
-- Launch angle  
-- Initial height  
-- Initial velocity  
+## Physics Background
+Kinematics Derivations
+The notebook walks through the derivation of the four classical kinematic equations:
 
-You can also select from several real‑world presets (baseball, soccer ball, shotput, etc.).
+- $v = v_0 + at$
+- $\delta{x} = \frac{1}{2}(v_0 + v)t$
+- $\delta{x} = v_0t + \frac{1}{2}a{t^2}$
+- ${v^2} = {v_0^2} + 2a\delta{x}$
 
----
+These equations describe motion under constant acceleration, which applies to projectile motion without drag.
 
-## How to Use Program
+## Modeling Drag
+Real projectiles experience drag, which makes acceleration velocity‑dependent.
+The simulaton covers:
 
-When the code loads, simply select a preset or adjust the sliders and press the "run" button. Doing so will generate the following plots:
+- Linear Drag: $F_d = -bv$
+- Quadratic Drag: $F_d = -cv^2$
+- Mixed Drag: $F_d = -bv -cv^2$
 
-- Impact Distance
-- Impact Speed
-- Impact Energy
+For this project, quadratic drag is used, as it best models objects like baseballs, arrows, and other fast-moving projectiles.
 
-It will also output the individual values for distance, speed, and energy when the projectile impacts the ground.
+The drag force is derived from Bernoulli’s equation:
 
----
+$$F_d = \frac{1}{2}\rho{C_d}A{v^2}$$
 
-## Preview
+This is simplified using a lumped drag constant:
 
-### User Interface
-![UI](images/ui_v2.png)
+$$c = \frac{1}{2}\rho{C_d}A$$
 
-### Trajectory Comparison (Drag vs No Drag)
-![Trajectory](images/trajectory.png)
+The resulting acceleration components are:
 
-### Speed vs Time
-![Speed](images/speed.png)
+$$a_x = -\frac{c}{m}v{v_x}$$
 
-### Energy vs Time
-![Energy](images/energy.png)
+$$a_y = -g -\frac{c}{m}v{v_y}$$
+
+These equations are numerically integrated using SciPy.
+
+## Numerical Integration
+The simulation uses:
+
+python
+scipy.integrate.solve_ivp
+
+This provides:
+
+- High accuracy
+- Adaptive step sizing
+- Event detection (stops when projectile hits the ground)
+- Better stability than Euler or RK2 methods
+
+## Interactive UI
+
+![UI Screenshot](ui_v3.png)
+
+- The notebook includes a full widget‑based UI:
+- Mass slider
+- Drag coefficient slider
+- Initial height
+- Launch angle
+- Initial speed
+- Preset projectiles (baseball, ping‑pong ball, cannonball, etc.)
+- Run simulation button
+- Reset button
+- GIF export
+- CSV export
+- Angle sweep visualization
 
 
----
 
-## Physics Model
+## Example Outputs
 
-The simulation solves a system of four coupled ODEs representing:
+Trajectory Plot
+![Trajectory Plot](trajectory.png)
 
-- Horizontal position \( x \)  
-- Vertical position \( y \)  
-- Horizontal velocity \( v_x \)  
-- Vertical velocity \( v_y \)
+Range vs. Launch Angle
+![Range vs Launch Angle](Range_vs_LauncAngle.png)
 
-### **No‑Drag Model**
-- $\frac{dx}{dt} = v_x$ &nbsp;&nbsp;&nbsp;
-- $\frac{dy}{dt} = v_y$ &nbsp;&nbsp;&nbsp;
-- $\frac{dv_x}{dt} = 0$ &nbsp;&nbsp;&nbsp;
-- $\frac{dv_y}{dt} = -g$
+## Features
+- Accurate physics‑based projectile simulation
+- Drag vs. no‑drag comparison
+- Energy calculations (KE, PE, total energy)
+- Interactive sliders and presets
+- Animated projectile motion with fading trail
+- GIF export using PillowWriter
+- CSV export for trajectory data
+- Angle sweep tool to visualize optimal launch angles
 
-### **Quadratic Drag Model**
-Drag force:   
-- $F_d = -c v^2$
+## File Structure
+Code
+ProjectileMotion/
+│
+├── ProjectileMotion.ipynb      # Main simulation notebook
+├── trajectory.png              # Static trajectory plot
+├── Range_vs_LauncAngle.png     # Angle sweep visualization
+├── ui_v3.png                   # UI screenshot
+├── AnimatedTrajectory.gif       # Animated projectile motion
+└── README.md                   # (This file)
 
-Resulting accelerations:  
-- ${a_x} = -\frac{c}{m} * v * v_x$
-- ${a_y} = -g - \frac{c}{m} * v * v_y$ 
-  
-### **Ground Impact Detection**
-An event function stops integration when:
+## Installation
+Requirements
+- Python 3.8+
+- NumPy
+- SciPy
+- Matplotlib
+- ipywidgets
+- pandas
+- Pillow
 
-- $y(t) = 0$
+Install dependencies:
 
-This allows accurate calculation of:
+bash
+pip install numpy scipy matplotlib ipywidgets pandas pillow
+Enable widgets (Jupyter):
 
-- Impact distance  
-- Impact speed  
-- Impact kinetic energy  
+bash
+jupyter nbextension enable --py widgetsnbextension
 
----
-- Clean UI with sliders and output panel  
-- Numerical integration using `scipy.integrate.solve_ivp`
+## Running the Simulation
+Open the notebook:
 
----
+bash
+jupyter notebook ProjectileMotion.ipynb
+Adjust sliders and presets
+Click Run (may take a couple of seconds)
+View trajectory, impact values, and animation
+Export GIF or CSV if desired
+
+## Future Improvements
+- Add wind modeling
+- Add Magnus effect (spin‑induced lift)
+- Add 3D projectile motion
+- Add real‑time plotting instead of post‑processing
+- Add UI themes or dark mode
