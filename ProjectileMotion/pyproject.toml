@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kinematics-sim"          # package name on PyPI
+version = "0.1.0"
+description = "A physics projectile motion simulation package"
+authors = [{ name = "Zachary Lee" }]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "matplotlib",
+	"scipy",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
