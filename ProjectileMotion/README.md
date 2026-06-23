@@ -4,55 +4,58 @@ An interactive physics simulation that models the 2D motion of a projectile when
 This tool visualizes trajectories, speed, and energy in real time using adjustable parameters and presets for common objects.
 It compares both values by outputting them through text and outputting them on the same plots.
 
-
-
-![AnimTrajectory](images/AnimatedTrajectory.gif)
+![AnimTrajectory](images/AnimatedTrajectory_v2.gif)
 
 ---
 
-## Overview
+## Features
+- Accurate quadratic drag model using `scipy.solve_ivp`
+- Interactive Jupyter widget UI with presets (baseball, cannonball, etc.)
+- Trajectory animation with trail + angle sweep analysis
+- Energy conservation tracking and no-drag comparison
+- Export results as CSV or GIF
+- Well-documented, installable package
+  
+## How to Use
 
-This simulation numerically solves the equations of motion for a projectile launched at an angle, comparing:
+The simulation contains a UI that features various sliders, buttons, and checkboxes.
 
-- **Ideal motion (no drag)**
-- **Realistic motion (quadratic drag)**
-
-The interface allows you to adjust:
-
-- Mass  
-- Drag coefficient  
-- Launch angle  
-- Initial height  
-- Initial velocity  
-
-You can also select from several real‑world presets (baseball, soccer ball, shotput, etc.).
-
----
-
-## How to Use Program
-
-When the code loads, simply select a preset or adjust the sliders and press the "run" button. Doing so will generate the following plots:
-
-- Impact Distance
-- Impact Speed
-- Impact Energy
-
-It will also output the individual values for distance, speed, and energy when the projectile impacts the ground.
-
----
-
-## Preview
-
-### User Interface
 ![UI](images/ui_v3.png)
 
-### Trajectory Comparison (Drag vs No Drag)
-![Trajectory](images/trajectory.png)
+To generate a plot, select a preset or adjust the sliders and press the "run" button. After a few seconds, it will a plot will generate featuring the following:
+- Projectile Trajectory
+  - Shows the trajectory of the projectile and how drag affects the distance it travels. 
+- Animated Projectile
+  - A projectile will move along the trajectory with variable speed that changes depending on inputted parameters.
 
-### Angle vs. Max Range
-![Angle](images/Range_vs_LaunchAngle.png)
+You can also click the "run angle sweep" button to generate a plot that shows which launch angle will produce the greatest amount of travel.
 
----
+![UI](images/OptimalAngle_v2.png)
+
+The simulation also features a "save to .gif" and "export to .CSV" button so that you can save your animation and export the projectile's data to a spreadsheet.
+Hitting the "reset" button will set the slider values to match that of a baseball.
+
+Finally, when you click "run", the projectile's distance, speed, and energy at impact will display.
+
+![UI](images/ProjectileInfo_v2.png)
+
+## Installation
+
+```bash
+git clone https://github.com/ztleeUT/Physics-Simulations.git
+cd Physics-Simulations/ProjectileMotion
+pip install -e .
+```
+
+
+## Quick Start
+
+from projectilemotion import run_simulation, plot_trajectory
+
+results = run_simulation(v0=50, angle=45, drag=True)
+plot_trajectory(results)
+
+See the notebooks/ProjectileMotion.ipynb for the full interactive demo.
 
 ## Physics Model
 
@@ -88,8 +91,7 @@ This allows accurate calculation of:
 - Impact speed  
 - Impact kinetic energy  
 
----
-- Clean UI with sliders and output panel  
-- Numerical integration using `scipy.integrate.solve_ivp`
+### Want the full derivations? 
+> Open **`docs/Physics_Background.md`** to learn how every equation in this project is derived.
 
 ---
