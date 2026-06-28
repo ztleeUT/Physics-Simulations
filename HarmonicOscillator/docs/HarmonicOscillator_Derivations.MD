@@ -55,11 +55,11 @@ We can factor out $e^{rt}$, leaving us with our characteristic equation:
 
 $$ (9)\quad \boxed{r^{2} + 2\gamma{r} + \omega^2 = 0} $$
 
-Equation (9) determines the behavior of the system. If we solve it for r, we get the solution $r = -\gamma {\pm}\sqrt{\gamma^2-\omega^2}$.  If we take a look at this solution and use the definition of underdamped ($\gamma < \omega$), overdamped ($\gamma > \omega$), and critically damped ($\gamma = \omega$). We obtain different solutions.
-- Underdamped ($\gamma < \omega$): where $r = -\gamma \pm i\omega_{d}$ and $\omega_{d} = \sqrt(\omega^2 - \gamma^2)$. The solution to equation (9) becomes $\boxed{x(t) = e^{-\gamma{t}}(A\cos(\omega_{d}{t}) + B\sin(\omega_{d}{t}))}$.
+Solving equation (9) for r gives $r = -\gamma {\pm}\sqrt{\gamma^2-\omega^2}$, which yields three distinct cases depending on the relationship between $\gamma$ and $\omega$.
+- Underdamped ($\gamma < \omega$): where $r = -\gamma \pm i\omega_{d}$ and $\omega_{d} = \sqrt(\omega^2 - \gamma^2)$. The solution to equation (9) becomes $$\boxed{x(t) = e^{-\gamma{t}}(A\cos(\omega_{d}{t}) + B\sin(\omega_{d}{t}))}$$
 
-- Overdamped ($\gamma > \omega$): where $r = -\gamma \pm \sqrt{\gamma^2 - \omega^2}$ The solution to equation (9) becomes $\boxed{x(t) = Ce^{r_{1}t} + De^{r_{2}t}}$.
+- Overdamped ($\gamma > \omega$): where $r = -\gamma \pm \sqrt{\gamma^2 - \omega^2}$ The solution to equation (9) becomes: $$\boxed{x(t) = Ce^{r_{1}t} + De^{r_{2}t}}$$
 
-- Critically Damped ($\gamma = \omega$): where $r = -\gamma$. The solution to equation (9) becomes $\boxed{x(t) = (A + Bt)e^{-\gamma{t}}}$.
+- Critically Damped ($\gamma = \omega$): where $r = -\gamma$. The solution to equation (9) becomes $$\boxed{x(t) = (A + Bt)e^{-\gamma{t}}}$$
 
 We now have all of the information we need to model a harmonic oscillator.
