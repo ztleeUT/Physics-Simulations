@@ -21,7 +21,7 @@ by converting it into a system of first-order ODEs and integrating forward in ti
 The numerical solution is validated against the analytical closed-form solution for 
 each damping case.
 
-> For the full derivation, see [theory.md](docs/theory.md).
+> For the full derivation, see [theory.md](docs/theory.MD).
 
 ---
 
