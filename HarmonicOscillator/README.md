@@ -24,8 +24,11 @@ by converting it into a system of first-order ODEs and integrating forward in ti
 	- Spring Constant (k).
 	- Damping Coefficient (b).
 
-## Files
-- `HarmonicOscillator.ipynb` — main notebook with simulation and plots.
+## How to Use
+
+## Installation
+
+## Quick Start
 
 ## Physics Model
 In the notebook, I derive everything we need starting with Newton's Second Law and Hooke's Law. I delve more deeply in derivations and explain each step I took. Having knowledge of Calculus and Ordinary Differential Equations isn't necessary, but it helpful in understanding each step.
@@ -35,6 +38,9 @@ In the notebook, I derive everything we need starting with Newton's Second Law a
 - NumPy
 - Matplotlib
 - ipywidgets
+
+### Want the full derivations? 
+> Open **`docs/HarmonicOscillator_Derivations.md`** to learn how to get the characteristic equation that is used in this simulation.
 
 ## Author
 Zachary Lee
