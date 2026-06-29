@@ -47,14 +47,14 @@ jupyter notebook
 
 3. Open the .ipynb file
 
-4. If plots do not display immediately, select Run All from the Cell menu to generate all outputs
+4. If plots do not display immediately, select Run All from the Cell menu to generate all outputs.
+   Note: some plots may take a few minutes to generate. I noted how long each took within each notebook.
 
 ---
 
 ## **Overview**
 
 Each project is organized into its own subfolder with a dedicated README, source code, and supporting materials. 
-When clicking each projects link, if the plots do not load initally try running all cells to generate them.
 
 - **[Projectile Motion with Drag](ProjectileMotion/README.md)** *(completed)*  
   Numerical integration of 2D projectile motion with and without air resistance, including visualization and parameter exploration.  
@@ -62,11 +62,14 @@ When clicking each projects link, if the plots do not load initally try running 
 - **[Damped Harmonic Oscillator](HarmonicOscillator/README.md)** *(completed)*   
   Simple, damped, and driven oscillators; phase‑space analysis; resonance behavior.  
 
-- **Lorenz System** (in-progress)  
-  Exploration of chaotic dynamics, strange attractors, and sensitivity to initial conditions.
+- **Control Systems (PID Controllers)** (in-progress)  
+  Feedback control, stability analysis, and real‑time system response.
 
-- **Monte Carlo Simulations** (in-progress)  
+- **[Monte Carlo Simulation](MonteCarloCEP/README.md)** (completed)  
   Random sampling techniques applied to integration, statistical physics, and probabilistic modeling.
+
+- **6‑DOF Projectile Dynamics** (in-progress)  
+  Full‑body motion modeling including aerodynamic forces and rotational effects.
 
 - **Double Pendulum & Other Chaotic Systems** (planned)  
   Nonlinear dynamics, energy conservation, and chaotic trajectories.
@@ -77,20 +80,9 @@ When clicking each projects link, if the plots do not load initally try running 
 - **Heat Transfer Simulations** (planned)  
   Finite‑difference modeling of conduction, diffusion, and transient thermal behavior.
 
-- **Wave Propagation & Schrödinger Equation** (planned)  
-  Numerical solutions to PDEs governing wave motion and quantum systems.
-
 - **Rigid Body Dynamics** (planned)  
   Gyroscopic motion, torque‑induced precession, and rotational kinematics.
 
-- **Collision Simulations** (planned)  
-  Elastic and inelastic collisions, conservation laws, and ideal gas approximations.
-
-- **Control Systems (PID Controllers)** (planned)  
-  Feedback control, stability analysis, and real‑time system response.
-
-- **6‑DOF Projectile Dynamics** (planned)  
-  Full‑body motion modeling including aerodynamic forces and rotational effects.
 
 ---
 
