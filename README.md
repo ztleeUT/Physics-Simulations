@@ -18,12 +18,12 @@ As I continue developing my software development skills, I prioritize **clarity,
 
 ## **Getting Started**
 
-These projects are written in Python and designed to run in Jupyter Notebook. Follow the steps below to get up and running.
+These projects are written in Python and designed to run in Jupyter Notebook or VS Code. Follow the steps below to get up and running.
 
 ### **Prerequisites:**
 
 - Python 3.8 or higher
-- Jupyter Notebook or JupyterLab
+- Jupyter Notebook or JupyterLab or VS Code
 
 ### **Installation**
 
@@ -56,16 +56,16 @@ jupyter notebook
 Each project is organized into its own subfolder with a dedicated README, source code, and supporting materials. 
 When clicking each projects link, if the plots do not load initally try running all cells to generate them.
 
-- **Projectile Motion with Quadratic Drag** *(completed)*  
+- **[Projectile Motion with Drag](ProjectileMotion/README.md)** *(completed)*  
   Numerical integration of 2D projectile motion with and without air resistance, including visualization and parameter exploration.  
   
-- **Harmonic Oscillators** *(in-progress)*   
-  Simple, damped, and driven oscillators; phase‑space analysis; resonance behavior.
+- **[Damped Harmonic Oscillator](HarmonicOscillator/README.md)** *(completed)*   
+  Simple, damped, and driven oscillators; phase‑space analysis; resonance behavior.  
 
-- **Lorenz System** (planned)  
+- **Lorenz System** (in-progress)  
   Exploration of chaotic dynamics, strange attractors, and sensitivity to initial conditions.
 
-- **Monte Carlo Methods** (planned)  
+- **Monte Carlo Simulations** (in-progress)  
   Random sampling techniques applied to integration, statistical physics, and probabilistic modeling.
 
 - **Double Pendulum & Other Chaotic Systems** (planned)  
