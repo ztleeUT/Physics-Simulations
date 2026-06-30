@@ -2,10 +2,11 @@
 
 A curated collection of physics‑based computational projects exploring topics across classical mechanics, thermodynamics, electromagnetism, numerical methods, and related topics in computational physics and engineering. This repository serves both as a technical portfolio and as a personal sandbox for deepening my understanding of physics through simulation, visualization, and scientific computing.
 
+![Double_Pendulum](images/double_pendulum_v2.gif)
+
 ---
 
 ## **Author’s Note**
-
 My background is in **physics and mathematics**, and the projects in this repository reflect my focus on:
 
 - accurate physical modeling  
@@ -37,6 +38,7 @@ pip install -r requirements.txt
 
 ### **Running the Projects**
 
+
 1. Launch Jupyter Notebook by typing the following into the command line.
 
 ```bash
@@ -62,16 +64,16 @@ Each project is organized into its own subfolder with a dedicated README, source
 - **[Damped Harmonic Oscillator](HarmonicOscillator/README.md)** *(completed)*   
   Simple, damped, and driven oscillators; phase‑space analysis; resonance behavior.  
 
-- **Control Systems (PID Controllers)** (in-progress)  
+- **[PID Controller System](PIDControllerSystems/README.md)** *(completed)*  
   Feedback control, stability analysis, and real‑time system response.
 
-- **[Monte Carlo Simulation](MonteCarloCEP/README.md)** (completed)  
+- **[Monte Carlo Simulation](MonteCarloCEP/README.md)** *(completed)*  
   Random sampling techniques applied to integration, statistical physics, and probabilistic modeling.
 
 - **6‑DOF Projectile Dynamics** (in-progress)  
   Full‑body motion modeling including aerodynamic forces and rotational effects.
 
-- **Double Pendulum & Other Chaotic Systems** (planned)  
+- **Double Pendulum & Other Chaotic Systems** (in-progress)  
   Nonlinear dynamics, energy conservation, and chaotic trajectories.
 
 - **N‑Body Gravitational Simulations** (planned)  
@@ -82,7 +84,6 @@ Each project is organized into its own subfolder with a dedicated README, source
 
 - **Rigid Body Dynamics** (planned)  
   Gyroscopic motion, torque‑induced precession, and rotational kinematics.
-
 
 ---
 
