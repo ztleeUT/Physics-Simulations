@@ -24,7 +24,7 @@ These projects are written in Python and designed to run in Jupyter Notebook or 
 ### **Prerequisites:**
 
 - Python 3.8 or higher
-- Jupyter Notebook or JupyterLab or VS Code
+- Jupyter Notebook or JupyterLab
 
 ### **Installation**
 
